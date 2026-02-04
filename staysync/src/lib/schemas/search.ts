@@ -19,9 +19,11 @@ export const searchSchema = z
       return d.toISOString().split("T")[0];
     }),
 
-    // url param 숫자변환
+    // url param 숫자인 부분 최대 10명
     adultsNum: z.coerce.number().min(1).max(10).optional().default(1),
     childrenNum: z.coerce.number().min(0).max(10).optional().default(0),
+
+    
     minPrice: z.coerce.number().min(0).optional(),
     maxPrice: z.coerce.number().min(0).optional(),
   })
