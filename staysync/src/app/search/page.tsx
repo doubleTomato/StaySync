@@ -1,8 +1,9 @@
-import FilterQuerySchema from '@/lib/schemas/search';
-
+import { searchSchema, type SearchParams } from '@/lib/schemas/search';
+import {getDatas} from '@/features/search/api';
+import TopHeader from '@/components/common/topHeader';
 export default async function SearchPage({ searchParams }: { searchParams: Promise<{ [key: string]: string | string[] | undefined }> }) {
   const params = await searchParams;
-  const parsed = FilterQuerySchema.safeParse(params);
+  const parsed = searchSchema.safeParse(params);
 
   // 파싱 안될 시 에러문구 띄우기
   if (!parsed.success) {
@@ -14,7 +15,9 @@ export default async function SearchPage({ searchParams }: { searchParams: Promi
   const stays = await getDatas(validatedFilter);
 
   return (
-    <main>
-    </main>
+    <>
+    <TopHeader></TopHeader>
+      <div>search</div>
+    </>
   );
 }

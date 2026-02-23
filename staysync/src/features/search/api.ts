@@ -1,3 +1,3 @@
-async function getDatas(parseData:object){
-
+export async function getDatas(parseData:object){
+    console.log('parseData', parseData);
 }
