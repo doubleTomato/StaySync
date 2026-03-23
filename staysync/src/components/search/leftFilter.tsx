@@ -6,7 +6,7 @@ import CCheckbox from '@/components/common/checkbox';
 
 export default function LeftFilter(){
     const [filters, setFilters] = useState({ wifi: false, parking: false });
-
+    // test
     return(
         <nav className="rounded-lg sticky h-full w-70 left-5 top-45 bottom-0px inline-block p-5 shadow-lg">
             <h1 className="mb-7 text-md font-semibold">상세 필터</h1>
